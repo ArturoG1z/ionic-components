@@ -10,9 +10,9 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "pre": "ionic build && ionic capacitor add android && ionic capacitor copy android",
+        "pre": "ionic build && ionic capacitor add android && ionic capacitor copy android && npx cap open android",
         "dev": "ionic capacitor run android -l --host=192.168.100.8",
-        "preprod": "ionic build && ionic capacitor copy android && npx cap sync android && npx cap open android",
+        "preprod": "ionic build && ionic capacitor copy android && npx cap sync android",
         "prod": "ionic capacitor build android"
     },
     "private": true,

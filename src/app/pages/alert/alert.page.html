@@ -4,6 +4,18 @@
   [isBackShown]="true"
 ></app-header>
 
-<ion-content>
-
+<ion-content class="ion-padding">
+  <ion-button (click)="presentAlert()" expand="block"> Show alert </ion-button>
+  <ion-button (click)="presentAlertMultipleButtons()" expand="block">
+    Show alert multiple buttons
+  </ion-button>
+  <ion-button (click)="presentAlertPrompt()" expand="block">
+    Present alert with prompt
+  </ion-button>
+  <ion-button (click)="presentAlertRadio()" expand="block">
+    Present alert with radio buttons
+  </ion-button>
+  <ion-button (click)="presentAlertCheckbox()" expand="block">
+    Present alert with checkboxes
+  </ion-button>
 </ion-content>
