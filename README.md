@@ -1,4 +1,4 @@
-# Capacitor TestApp
+# IONIC COMPONENTS APP
 
 This is a template app to test all ionic components that are available, is based on Fernando Herrera's course [ionic 6+: Create IOS, Android applications and PWAs with Angular](https://www.udemy.com/course/ionic-ios-android-pwa-appstore-playstore-push/).
 
