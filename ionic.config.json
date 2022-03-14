@@ -1,0 +1,7 @@
+{
+  "name": "components-cord",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
