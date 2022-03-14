@@ -21,6 +21,10 @@ export class TxtFileOpenPage implements OnInit {
   ngOnInit() {
   }
 
+  openFile() {
+    this.fileInput.el.querySelector('input').click();
+  }
+
   onClickClearVariables(e) {
     this.file.name = '';
     this.file.content = '';

@@ -9,10 +9,21 @@
     <ion-grid fixed>
       <ion-row>
         <ion-col size="7">
+          <ion-button
+            (click)="openFile()"
+            expand="block"
+            fill="clear"
+            shape="round"
+            color="success"
+            fill="outline"
+          >
+            Open n calc File
+            <ion-icon slot="end" name="document"></ion-icon>
+          </ion-button>
           <ion-input
             type="file"
             accept=".txt,.py"
-            class="btn"
+            class="btn-hidden"
             title=" "
             #fileInput
             (change)="onChangeFile($event)"
