@@ -1,0 +1,22 @@
+<app-header
+  title="Avatar"
+  [isAboutShown]="false"
+  [isBackShown]="true"
+  [isAvatarShown]="true"
+  imagePath="/assets/images/avatars/stan-lee.jpg"
+></app-header>
+<!-- ? Diferencia con ion-img se carga con lazy load, el avatar no -->
+<ion-content class="ion-padding">
+  <ion-chip color="primary" outline="true" *ngFor="let item of [1,1,1,]">
+    <ion-avatar>
+      <img src="/assets/images/avatars/stan-lee.jpg"/>
+    </ion-avatar>
+    <ion-label>Stan lee</ion-label>
+  </ion-chip>
+  <ion-item *ngFor="let item of [1,1,1,1,1,1,1,1,1,1]">
+    <ion-avatar slot="start">
+      <img src="/assets/images/avatars/stan-lee.jpg"/>
+    </ion-avatar>
+    <ion-label>Stan lee</ion-label>
+  </ion-item>
+</ion-content>

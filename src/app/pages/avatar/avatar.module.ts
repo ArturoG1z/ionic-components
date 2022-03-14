@@ -4,19 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { AvatarPageRoutingModule } from './avatar-routing.module';
 
-import { HomePage } from './home.page';
-import { ComponentsModule } from '../../components/components.module';
+import { AvatarPage } from './avatar.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
+    AvatarPageRoutingModule,
     ComponentsModule,
   ],
-  declarations: [HomePage]
+  declarations: [AvatarPage]
 })
-export class HomePageModule {}
+export class AvatarPageModule {}

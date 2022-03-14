@@ -10,5 +10,10 @@
         <ion-icon slot="icon-only" name="information-circle"></ion-icon>
       </ion-button>
     </ion-buttons>
+    <ion-buttons slot="end" *ngIf="isAvatarShown">
+      <ion-avatar>
+        <img [src]="imagePath"/>
+      </ion-avatar>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>

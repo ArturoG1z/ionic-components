@@ -26,6 +26,16 @@ export class HomePage implements OnInit {
       name: 'File text reader',
       redirectTo: '/txt-file-open',
     },
+    {
+      icon: 'beaker-outline',
+      name: 'Avatar',
+      redirectTo: '/avatar',
+    },
+    {
+      icon: 'radio-button-off',
+      name: 'Buttons',
+      redirectTo: '/buttons',
+    }
   ];
   constructor(
   ) {
