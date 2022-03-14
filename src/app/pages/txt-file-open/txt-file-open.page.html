@@ -1,0 +1,46 @@
+<app-header
+  title="File reader"
+  [isAboutShown]="false"
+  [isBackShown]="true"
+></app-header>
+
+<ion-content>
+  <div id="container">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="7">
+          <ion-input
+            type="file"
+            accept=".txt,.py"
+            class="btn"
+            title=" "
+            #fileInput
+            (change)="onChangeFile($event)"
+          ></ion-input>
+        </ion-col>
+        <ion-col size="5">
+          <ion-button
+            (click)="onClickClearVariables()"
+            expand="block"
+            fill="clear"
+            shape="round"
+            color="danger"
+            fill="outline"
+          >
+            Clear
+            <ion-icon slot="end" name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title >{{ file.content.length > 0 ? file.name : 'You have not opened any file' }}</ion-card-title>
+        <ion-card-subtitle> {{ file.size !== 0 ? 'Size: ' + file.size  : '' }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content *ngIf="file.content.length > 0">
+        {{ file.content }}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

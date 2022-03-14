@@ -1,7 +1,7 @@
 {
-  "name": "components-cord",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
+    "name": "ionic-components",
+    "integrations": {
+        "capacitor": {}
+    },
+    "type": "angular"
 }
