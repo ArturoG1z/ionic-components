@@ -2,6 +2,12 @@
 
 This is a template app to test all ionic components that are available, is based on Fernando Herrera's course [ionic 6+: Create IOS, Android applications and PWAs with Angular](https://www.udemy.com/course/ionic-ios-android-pwa-appstore-playstore-push/).
 
+## Prerequisites
+
+- Nodejs installed
+- Ionic CLI installed
+- Android Studio installed
+
 ## Setup
 
 1. Fork and clone this repo.
