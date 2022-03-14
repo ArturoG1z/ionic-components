@@ -35,7 +35,12 @@ export class HomePage implements OnInit {
       icon: 'radio-button-off',
       name: 'Buttons',
       redirectTo: '/buttons',
-    }
+    },
+    {
+      icon: 'card',
+      name: 'Cards',
+      redirectTo: '/cards',
+    },
   ];
   constructor(
   ) {
