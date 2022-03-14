@@ -1,0 +1,32 @@
+<app-header
+  title="Checkbox"
+  [isAboutShown]="false"
+  [isBackShown]="true"
+></app-header>
+<ion-content class="ion-padding">
+  <h3>Default Checkbox</h3>
+  <ion-item>
+    <ion-label>Awesome Label</ion-label>
+    <ion-checkbox>check</ion-checkbox>
+  </ion-item>
+
+  <h3>Disabled Checkbox</h3>
+  <ion-item>
+    <ion-label>Awesome Label</ion-label>
+    <ion-checkbox disabled="true"></ion-checkbox>
+  </ion-item>
+
+  <h3>Checked Checkbox</h3>
+  <ion-item>
+    <ion-label>Awesome Label</ion-label>
+    <ion-checkbox slot="end" color checked="true"></ion-checkbox>
+  </ion-item>
+
+  <h3>Checkboxes in a List</h3>
+  <ion-list>
+    <ion-item *ngFor="let entry of form" (click)="onClick(entry)">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [color]="entry.color" [(ngModel)]="entry.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>
