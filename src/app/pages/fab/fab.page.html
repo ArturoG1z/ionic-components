@@ -1,0 +1,67 @@
+<app-header
+  title="Fab"
+  [isAboutShown]="false"
+  [isBackShown]="true"
+></app-header>
+
+<ion-content>
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="top">
+      <ion-fab-button
+        color="facebook"
+        class="fab-button-top-w-desc"
+        data-desc="Abrir face"
+      >
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button
+        color="twitter"
+        class="fab-button-top-w-desc"
+        data-desc="Ver Twitter"
+      >
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button
+        color="youtube"
+        class="fab-button-top-w-desc"
+        data-desc="Ver youtube"
+      >
+        <ion-icon name="logo-youtube"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+
+    <ion-fab-list side="start">
+      <ion-fab-button color="vimeo">
+        <ion-icon name="logo-vimeo"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="google">
+        <ion-icon name="logo-google"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="github">
+        <ion-icon name="logo-github"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-list>
+    <ion-item *ngFor="let item of data; let i = index">
+      <ion-label>Item {{ i + 1 }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>

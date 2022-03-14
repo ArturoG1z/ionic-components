@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'checkbox',
     loadChildren: () => import('./pages/checkbox/checkbox.module').then( m => m.CheckboxPageModule)
   },
+  {
+    path: 'fab',
+    loadChildren: () => import('./pages/fab/fab.module').then( m => m.FabPageModule)
+  },
 ];
 
 @NgModule({
