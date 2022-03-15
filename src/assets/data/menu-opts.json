@@ -83,5 +83,10 @@
     "icon": "phone-portrait-outline",
     "name": "Modal",
     "redirectTo": "/modal"
-  }
+  },
+  {
+    "icon": "tablet-portrait-outline",
+    "name": "Popover",
+    "redirectTo": "/popover"
+  }  
 ]
