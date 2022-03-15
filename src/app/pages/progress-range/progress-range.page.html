@@ -1,0 +1,153 @@
+<app-header
+  title="Progress Range"
+  [isAboutShown]="false"
+  [isBackShown]="true"
+></app-header>
+
+<ion-content>
+  <article>
+    <ion-text color="primary" class="ion-text-center">
+      <h3>Progress bar</h3>
+    </ion-text>
+    <ion-list inset>
+      <ion-item>
+        <h4>Default Progressbar</h4>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <h4>Default Progressbar with 50 percent</h4>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar value="0.5"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <h4>Colorize Progressbar</h4>
+      </ion-item>
+      <ion-item>
+        <ion-text color="primary">Primary</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar color="primary" value="0.5"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <ion-text color="secondary">Secondary</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar color="secondary" value="0.6"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <h4>Other types</h4>
+      </ion-item>
+      <ion-item>
+        <ion-text color="primary">With buffer</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar value="0.25" buffer="0.5"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <ion-text color="primary">Indeterminate</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar type="indeterminate"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <ion-text color="primary">Indeterminate reversed</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar
+          type="indeterminate"
+          reversed="true"
+        ></ion-progress-bar>
+      </ion-item>
+    </ion-list>
+    <ion-text color="primary" class="ion-text-center">
+      <h3>Range</h3>
+    </ion-text>
+    <ion-list inset>
+      <ion-item>
+        <ion-range color="danger" pin></ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-range min="-200" max="200" color="secondary" pin>
+          <ion-label slot="start">-200</ion-label>
+          <ion-label slot="end">200</ion-label>
+        </ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-range min="20" max="80" step="2" pin>
+          <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+          <ion-icon slot="end" name="sunny"></ion-icon>
+        </ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-range
+          min="1000"
+          max="2000"
+          step="100"
+          snaps="true"
+          color="secondary"
+          pin
+        ></ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-range
+          min="1000"
+          max="2000"
+          step="100"
+          snaps="true"
+          ticks="false"
+          color="secondary"
+          pin
+        ></ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-range
+          dualKnobs="true"
+          min="21"
+          max="72"
+          step="3"
+          snaps="true"
+          pin
+        ></ion-range>
+      </ion-item>
+
+      <ion-item>
+        <ion-range
+          min="0"
+          max="100"
+          [pinFormatter]="customFormatter"
+          pin
+        ></ion-range>
+      </ion-item>
+    </ion-list>
+    <ion-list inset>
+      <ion-item>
+        <ion-text color="primary">Combined excercice</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-range
+          (ionChange)="rangeChange($event)"
+          min="0"
+          max="100"
+          step="1"
+          snaps="true"
+          color="secondary"
+          pin
+        ></ion-range>
+      </ion-item>
+      <ion-item>
+        <ion-progress-bar
+          [value]="porcent"
+          color="primary"
+        ></ion-progress-bar>
+      </ion-item>
+    </ion-list>
+  </article>
+</ion-content>
