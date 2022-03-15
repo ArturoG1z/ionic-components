@@ -76,6 +76,11 @@ export class HomePage implements OnInit {
       name: 'Input Form',
       redirectTo: '/input-form',
     },
+    {
+      icon: 'list',
+      name: 'List',
+      redirectTo: '/list',
+    },
   ];
   constructor(
   ) {
