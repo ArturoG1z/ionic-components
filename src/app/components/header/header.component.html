@@ -6,19 +6,21 @@
     <ion-title class="ion-text-centerquitame">
       {{ title }}
     </ion-title>
-    <ion-buttons slot="end" *ngIf="isAboutShown">
+    <ion-buttons slot="end" >
       <ion-button
         routerLink="/about"
         color="secondary"
         [disabled]="isAboutDisabled"
+        *ngIf="isAboutShown"
       >
         <ion-icon slot="icon-only" name="information-circle"></ion-icon>
       </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="end" *ngIf="isAvatarShown">
-      <ion-avatar>
+      <ion-avatar *ngIf="isAvatarShown">
         <img [src]="imagePath" />
       </ion-avatar>
+      <ion-button (click)="toggle()" *ngIf="isToggleShown">
+        <ion-icon slot="icon-only" [name]="isEditable ? 'close' : 'reorder-three'"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +12,16 @@ export class HeaderComponent implements OnInit {
   @Input() isAboutDisabled = false;
   @Input() isAvatarShown: boolean;
   @Input() imagePath: string;
+  @Input() isToggleShown: boolean;
+  @Output() clickToggle = new EventEmitter<boolean>();
+  isEditable = false;
   constructor() { }
 
   ngOnInit() {}
+
+  toggle() {
+    this.isEditable = !this.isEditable;
+    this.clickToggle.emit( this.isEditable );
+  }
 
 }

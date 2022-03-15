@@ -1,0 +1,25 @@
+<app-header
+  title="List Reorder"
+  [isAboutShown]="false"
+  [isBackShown]="true"
+  [isToggleShown]="true"
+  (clickToggle)="listenToggle($event)"
+></app-header>
+
+<ion-content>
+  <ion-list>
+    <ion-reorder-group (ionItemReorder)="doReorder($event)" [disabled]="!isEditable">
+      <ion-item *ngFor="let user of users; let i = index" lines="none">
+        <ion-note slot="start" color="tertiary">{{ i + 1 }}</ion-note>
+        <ion-label>
+          <h3>{{ user.name }}</h3>
+          <p>{{ user.email }}</p>
+        </ion-label>
+        <ion-note class="ion-text-end text-small" slot="end">
+          {{ user.phone }}
+        </ion-note>
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+</ion-content>
