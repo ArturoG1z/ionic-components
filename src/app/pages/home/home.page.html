@@ -2,22 +2,26 @@
   title="Ionic components"
   [isAboutShown]="true"
   [isBackShown]="false"
+  [isMenuShown]="true"
 ></app-header>
 
-<ion-content>
+<ion-content fullscreen>
   <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Metrics</ion-title>
     </ion-toolbar>
   </ion-header> -->
   <ion-list>
-    <ion-item *ngFor="let c of components" button [routerLink]="c.redirectTo" detail>
+    <ion-item
+      *ngFor="let c of components | async"
+      button
+      [routerLink]="c.redirectTo"
+      detail
+    >
       <ion-icon slot="start" [name]="c.icon" color="primary"></ion-icon>
       <ion-label>{{ c.name }}</ion-label>
     </ion-item>
   </ion-list>
-
-  
 </ion-content>
 
 <!-- <ion-tabs>

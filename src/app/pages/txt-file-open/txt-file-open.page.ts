@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IFile } from '../../models/file';
+import { IFile } from '../../interfaces/interfaces';
 
 @Component({
   selector: 'app-txt-file-open',

@@ -1,12 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header translucent class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons slot="start" *ngIf="isBackShown">
-      <ion-back-button defaultHref="/home" color="primary"> </ion-back-button>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="primary" *ngIf="isBackShown">
+      </ion-back-button>
+      <ion-menu-button menu="first-menu" *ngIf="isMenuShown"></ion-menu-button>
+      
+      <!--? if there are more menus this will another option of an menu button -->
+      <!-- <ion-button (click)="showMenu()" *ngIf="isMenuShown">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button> -->
     </ion-buttons>
     <ion-title class="ion-text-centerquitame">
       {{ title }}
     </ion-title>
-    <ion-buttons slot="end" >
+    <ion-buttons slot="end">
       <ion-button
         routerLink="/about"
         color="secondary"
@@ -19,7 +26,10 @@
         <img [src]="imagePath" />
       </ion-avatar>
       <ion-button (click)="toggle()" *ngIf="isToggleShown">
-        <ion-icon slot="icon-only" [name]="isEditable ? 'close' : 'reorder-three'"></ion-icon>
+        <ion-icon
+          slot="icon-only"
+          [name]="isEditable ? 'close' : 'reorder-three'"
+        ></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

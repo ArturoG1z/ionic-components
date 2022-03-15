@@ -1,101 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-interface IComponent {
-  icon: string;
-  name: string;
-  redirectTo: string;
-}
+import { IComponent } from 'src/app/interfaces/interfaces';
+import { DataService } from '../../services/data.service';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  components: IComponent[] = [
-    {
-      icon: 'american-football',
-      name: 'Action Sheet',
-      redirectTo: '/action-sheet',
-    },
-    {
-      icon: 'alert-circle-outline',
-      name: 'Alert',
-      redirectTo: '/alert',
-    },
-    {
-      icon: 'document',
-      name: 'File text reader',
-      redirectTo: '/txt-file-open',
-    },
-    {
-      icon: 'beaker-outline',
-      name: 'Avatar',
-      redirectTo: '/avatar',
-    },
-    {
-      icon: 'radio-button-off',
-      name: 'Buttons',
-      redirectTo: '/buttons',
-    },
-    {
-      icon: 'card',
-      name: 'Cards',
-      redirectTo: '/cards',
-    },
-    {
-      icon: 'checkmark-circle-outline',
-      name: 'Checkbox',
-      redirectTo: '/checkbox',
-    },
-    {
-      icon: 'calendar-outline',
-      name: 'Datetime',
-      redirectTo: '/datetime',
-    },
-    {
-      icon: 'car-outline',
-      name: 'Fab',
-      redirectTo: '/fab',
-    },
-    {
-      icon: 'grid-outline',
-      name: 'Grid',
-      redirectTo: '/grid',
-    },
-    {
-      icon: 'infinite-outline',
-      name: 'Infinite Scroll',
-      redirectTo: '/infinite-scroll',
-    },
-    {
-      icon: 'keypad-outline',
-      name: 'Input',
-      redirectTo: '/input',
-    },
-    {
-      icon: 'keypad-outline',
-      name: 'Input Form',
-      redirectTo: '/input-form',
-    },
-    {
-      icon: 'list',
-      name: 'List',
-      redirectTo: '/list',
-    },
-    {
-      icon: 'list',
-      name: 'List Reorder',
-      redirectTo: '/list-reorder',
-    },
-    {
-      icon: 'refresh-circle-outline',
-      name: 'Loading',
-      redirectTo: '/loading',
-    },
-  ];
+  components: Observable<IComponent[]>;
   constructor(
+    private dataService: DataService
   ) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.components = this.dataService.getMenuOpts();
+  }
 
 }
