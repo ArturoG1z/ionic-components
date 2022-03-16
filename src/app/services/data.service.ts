@@ -18,4 +18,8 @@ export class DataService {
   getUsers() {
     return this.http.get('https://jsonplaceholder.typicode.com/users');
   }
+
+  getAlbums() {
+    return this.http.get<any[]>('https://jsonplaceholder.typicode.com/albums');
+  }
 }
