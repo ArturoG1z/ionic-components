@@ -93,5 +93,10 @@
     "icon": "code-working-outline",
     "name": "Progress Range",
     "redirectTo": "/progress-range"
-  }  
+  },
+  {
+    "icon": "arrow-down-circle-outline",
+    "name": "Refresher",
+    "redirectTo": "/refresher"
+  }
 ]

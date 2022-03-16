@@ -91,6 +91,10 @@ const routes: Routes = [
     path: 'progress-range',
     loadChildren: () => import('./pages/progress-range/progress-range.module').then( m => m.ProgressRangePageModule)
   },
+  {
+    path: 'refresher',
+    loadChildren: () => import('./pages/refresher/refresher.module').then( m => m.RefresherPageModule)
+  },
 ];
 
 @NgModule({
