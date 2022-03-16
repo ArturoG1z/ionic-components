@@ -50,7 +50,7 @@
         <ion-card-subtitle> {{ file.size !== 0 ? 'Size: ' + file.size  : '' }}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content *ngIf="file.content.length > 0">
-        {{ file.content }}
+        <p style="white-space: pre;">{{ file.content }}</p>
       </ion-card-content>
     </ion-card>
   </div>

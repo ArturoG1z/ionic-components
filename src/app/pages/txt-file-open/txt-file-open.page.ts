@@ -25,7 +25,7 @@ export class TxtFileOpenPage implements OnInit {
     this.fileInput.el.querySelector('input').click();
   }
 
-  onClickClearVariables(e) {
+  onClickClearVariables(e = null) {
     this.file.name = '';
     this.file.content = '';
     this.file.type = '';
