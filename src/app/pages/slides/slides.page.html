@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-slides pager="ios" class="slide-full">
+    <ion-slide *ngFor="let slide of slides">
+      <ion-card >
+        <img [src]="slide.img" class="slide-image" />
+
+        <ion-card-header>
+          <ion-card-subtitle>{{ slide.title }}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content> {{ slide.desc }} </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-button (click)="onClick()" expand="block" fill="clear">
+        Start
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+
+<!-- !
+ ! Warning]: ion-slides has been deprecated and will be removed in Ionic
+ ! Framework v7.0. We recommend using the framework-specific integrations that
+ ! Swiper.js provides, allowing for faster bug fixes and an improved developer
+ ! experience.
+! -->
