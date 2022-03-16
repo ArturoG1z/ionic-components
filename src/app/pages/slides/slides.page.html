@@ -1,10 +1,10 @@
 <ion-content>
-  <ion-slides pager="ios" class="slide-full">
+  <ion-slides pager="ios" class="slide-full" > <!-- [options]="slideOpts" -->
     <ion-slide *ngFor="let slide of slides">
       <ion-card >
         <img [src]="slide.img" class="slide-image" />
 
-        <ion-card-header>
+        <ion-card-header> 
           <ion-card-subtitle>{{ slide.title }}</ion-card-subtitle>
         </ion-card-header>
 
