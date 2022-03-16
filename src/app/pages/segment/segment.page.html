@@ -1,0 +1,157 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Segment</ion-title>
+    <!--     
+    <ion-segment (ionChange)="segmentChanged($event)" slot="end">
+      <ion-segment-button value="camera">
+        <ion-icon name="camera"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="bookmark">
+        <ion-icon name="bookmark"></ion-icon>
+      </ion-segment-button>
+    </ion-segment> 
+    -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-segment value="pizza" (ionChange)="segmentHeroChanged($event)">
+    <ion-segment-button value="all">
+      <ion-label>All</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="DC comics">
+      <ion-label>DC</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Marvel comics">
+      <ion-label>Marvel comics</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list>
+    <ion-radio-group value="biff">
+      <ion-list-header>
+        <ion-label
+          >Super heros, publisher: {{ publisher === '' ? 'all' : publisher
+          }}</ion-label
+        >
+      </ion-list-header>
+      <ion-item
+        *ngFor="let hero of superHeroes | async | searchfilter:publisher:'publisher'"
+      >
+        <ion-label>{{hero.superhero}}</ion-label>
+        <ion-radio slot="end" value="{{hero.superhero}}"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <h3>Default Segment</h3>
+
+        <ion-segment (ionChange)="segmentChanged($event)">
+          <ion-segment-button value="friends">
+            <ion-label>Friends</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="enemies">
+            <ion-label>Enemies</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <h3>Disabled Segment</h3>
+        <ion-segment
+          (ionChange)="segmentChanged($event)"
+          disabled
+          value="sunny"
+        >
+          <ion-segment-button value="sunny">
+            <ion-label>Sunny</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="rainy">
+            <ion-label>Rainy</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <h3>Segment with anchors</h3>
+        <ion-segment (ionChange)="segmentChanged($event)">
+          <ion-segment-button value="dogs">
+            <ion-label>Dogs</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="cats">
+            <ion-label>Cats</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <h3>Scrollable Segment</h3>
+        <ion-segment scrollable value="heart">
+          <ion-segment-button value="home">
+            <ion-icon name="home"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="heart">
+            <ion-icon name="heart"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="pin">
+            <ion-icon name="pin"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="star">
+            <ion-icon name="star"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="call">
+            <ion-icon name="call"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="globe">
+            <ion-icon name="globe"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="basket">
+            <ion-icon name="basket"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <h3>Segment with secondary color</h3>
+        <ion-segment (ionChange)="segmentChanged($event)" color="secondary">
+          <ion-segment-button value="standard">
+            <ion-label>Standard</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="hybrid">
+            <ion-label>Hybrid</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="sat">
+            <ion-label>Satellite</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <h3>Segment with default selection</h3>
+        <ion-segment (ionChange)="segmentChanged($event)" value="javascript">
+          <ion-segment-button value="python">
+            <ion-label>Python</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="javascript">
+            <ion-label>Javascript</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
