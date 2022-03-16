@@ -1,0 +1,23 @@
+<app-header
+  title="Toast"
+  [isAboutShown]="false"
+  [isBackShown]="true"
+></app-header>
+
+<ion-content class="ion-padding">
+  <ion-button (click)="presentToast()" expand="block">
+    Show simple toast
+  </ion-button>
+  <ion-button (click)="presentToastWithOptions()" expand="block">
+    Show toast with options
+  </ion-button>
+  <ion-list>
+    <ion-item
+      *ngFor="let item of [1,1,1,1,1,1]; let i = index"
+      button
+      (click)="presentToast(i)"
+    >
+      <ion-label>Item {{ i + 1 }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
