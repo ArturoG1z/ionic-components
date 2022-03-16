@@ -1,4 +1,4 @@
-# Data Storage solutions
+# Local Data Storage solutions
 Searching for a reliable local data storage solution is a challenge, and if we are talking of local storage, we have to consider many factors, like reliability, performance, and security.
 The next article helps us to understand the main options and their pros and cons.
 
