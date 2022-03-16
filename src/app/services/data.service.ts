@@ -1,15 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IComponent } from 'src/app/interfaces/interfaces';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
-
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   getMenuOpts() {
     return this.http.get<IComponent[]>('assets/data/menu-opts.json');
@@ -24,6 +22,6 @@ export class DataService {
   }
 
   getHeros() {
-    return this.http.get('assets/data/superheroes.json');
+    return this.http.get('assets/data/superheroes.json').pipe(delay(2000));
   }
 }
